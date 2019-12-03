@@ -1,0 +1,27 @@
+<section class="container mt-5 mb-5">
+  <div class="row">
+      <form class="example-form col-lg-6">
+          <mat-form-field class="example-full-width">
+            <mat-icon for="searchText" aria-hidden="false">search</mat-icon> 
+            <input type="text" id="searchText" name="searchText" [(ngModel)]="searchText" matInput placeholder="Chercher">
+          </mat-form-field>
+        </form>
+  </div>
+  <div class="row" *ngIf="infoUsers">
+      <div *ngFor="let data of infoUsers | slice:0:9 | filterText : searchText" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mt-3">
+          <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title><mat-icon aria-hidden="false">account_circle</mat-icon>  {{data.login}}</mat-card-title>
+                <mat-card-subtitle>{{data.type}}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image width="100%" [src]="data.avatar_url" alt="{{data.login}}" title="{{data.login}}">
+              <mat-card-content>
+                <p class="text-center">{{fauxtxt | slice:0:100}}</p>
+              </mat-card-content>
+              <mat-card-actions class="text-center">
+                <a mat-raised-button color="primary" (click)="getUsers(data.login)">{{data.repos_url | shortUrl}}</a>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+  </div>
+</section>

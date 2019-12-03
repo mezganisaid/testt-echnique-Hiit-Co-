@@ -1,0 +1,22 @@
+
+<section class="container mt-5 mb-5">
+  <div class="row">
+
+    <div class="col-lg-12 text-center mx-auto mb-5">
+        <button (click)="goBack()" mat-raised-button color="primary">Précédent</button>
+    </div>
+
+    <div class="col-lg-12 mt-5" *ngIf="infoUsers">
+        <div class="row">
+               <form  #f="ngForm" class="example-form col-lg-12" (ngSubmit)="copyURL(f)">
+                <mat-form-field class="example-full-width">
+                  <mat-icon for="searchText" aria-hidden="false">search</mat-icon> 
+                  <input type="text" name="textcopied" id="textcopied" [(ngModel)]="infoUsers.repos_url"  matInput placeholder="Chercher">
+                </mat-form-field>
+                <button type="submit" mat-raised-button color="warn">Copier url</button>
+              </form>
+        </div>
+    </div>
+
+  </div>
+</section>

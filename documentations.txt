@@ -1,0 +1,29 @@
+Création du projet
+ng new appTest
+
+
+Accéder au dossier
+cd appTest
+
+
+Lancement du projet (par défaut 4200): "http://localhost:4200/"
+ng serve
+
+
+Instalation de Angular material
+ng add @angular/material
+
+
+Création des composants
+ng g c components/firstpage
+ng g c components/secondepage
+ng g c components/header
+
+
+Création d'un service
+ng g s services/githubapi
+
+
+
+ng g p pipes/shortUrl => 
+ng g p pipes/filterText
